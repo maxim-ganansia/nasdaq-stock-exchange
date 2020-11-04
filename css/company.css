@@ -1,0 +1,68 @@
+.main-content{
+    background-image: url(../Images/NasdaqPicture5.jpg);
+    background-color: #cccccc;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 150vh;
+}
+
+.result-link, .chart-company{
+    margin-left: 25%;
+    background-color: white;
+    width: 50%;
+    text-align: center;
+    border-radius: 15px;
+    margin-top: 3%;
+}
+
+.company-logo{
+    width: 20%;
+}
+
+.result-name{
+    font-size: 30px;
+    color: #0B7496;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-top: 2%;
+}
+
+.positive-percentage, .negative-percentage{
+    margin-left: 1%;
+}
+
+.company-description{
+    margin-top: 3%;
+    font-style: italic;
+    color: #0B7496;
+}
+
+.stock-price-title{
+    font-size: 20px;
+    color: #0B7496;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.title-section{
+    font-size: 70px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #0B7496;
+}
+
+.positive-percentage{
+    color: green;
+}
+
+.negative-percentage{
+    color: red;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.company-website{
+    margin-top: 3%;
+    font-size: 25px;
+}
+
+

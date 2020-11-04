@@ -1,0 +1,46 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Stock Exchange</title>
+  <meta name="description" content="Project Name">
+  <meta name="author" content="Fill in your name">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="./css/styles.css">
+  <link
+    href="data:image/x-icon;base64,AAABAAEAEBAAAAAAAABoBQAAFgAAACgAAAAQAAAAIAAAAAEACAAAAAAAAAEAAAAAAAAAAAAAAAEAAAAAAAAAAAAALbvyAGYcCAC87/8AGL/wAL3v/wAUs/EAz/X+AHnd+wCZ6PwAEqXfADbB8gCq6v4AuvD9AF/L7QAqwvAAn+f/AMLw/QCu8P4AFKriAGHT+AAczPYALrbxAHTZ9wBb0fYAFK/lADTE8wATqOAAGcDvADrE8wDf+P8AmeP7AGHU9gBe0/kAw/D+AKnp+gBy2vUAD5jcABe77QAawvIAE6/uADvG9gCO3fQAZNb5AIXe+gBo1vkAjub8AHnc+ACi6fsAEqHcAFrM9QA8x/QAFK3kAJHh+gA+yfcAR8f0AKLp/AA5uOUAadn6AGzT8gAasfIAJbrxABnD8QAwv/MAV9PzACu38QC17v4AUcf0ANP2/wATr/AAY9r4AIrg9gCr6/8AG8j0AETN9QC37v8ASMz4AL3v/AB42vgAI7XwAKLn+wAXt+sAu/H/AEzP+AAbyPUAid/6AGzX+QCH4voAoun+AMPx/wBHweYAqur7AHvf+wDG9P8AG8bzAMf0/wDa9/4Amub/ABu39AA2wvUAouf8AMz0/wDO9P8A0fT/ACCw7wAVs+cAG8TxAFzN9gBR0vkAcd73ANb3/wDX9/8Ave/+AEDL9QBm2/gAHMn0AL/y/gAVs+gAp+39AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAIAAgAAAAIAAgICAAIORwICWgIAAAACJG1AOQICKgIsAjsCAgICAkICAgICAgIXGAIuAjcWKAIFAhASJQJNH1UCRhsCAgIRZl0CAgIcW04gSnI0C0E8YgZFAAAAagcicGQJaSFMYxQxAAAAAElgZ1lLdFEdAWhDCgAAAAAANR5vZSMPK1MpLRMAAAAAAAAAVAAnLzM/T1YZAAAAAAAAAAAAPjg6bDYydQAAAAAAAAAAAF5XcRo9a1EAAAAAAAAAAABzDQxYCFwmAAAAAAAAAAAAFW4DSGF2BAAAAAAAAAAAAABQRF9SMAAAAAAAAAAAAAAAAAAVAAAAAAAAAHXRAAABwAAAAAAAAAAAAAAAAAAAAAcAAAAPAAAADwAAgA8AAOgPAAD4DwAA+A8AAPgPAAD4DwAA/B8AAP9/AAA="
+    rel="icon" type="image/x-icon" />
+</head>
+
+<body class="main-content">
+  <div id="marquee-display" LOOP="0"></div>
+  <div class="container mt-3 shadow-lg p-5">
+    <h1 class="title-stock mb-4 text-center display-4">Nasdaq Stock Exchange </h1>
+    <div id="form"></div>
+    <div id="display-result">
+      <ul id="list-result"></ul>
+    </div>
+  </div>
+  <script src="./js/Marquee.js"></script>
+  <script src="./js/SearchForm.js"></script>
+  <script src="./js/SearchResult.js"></script>
+  <!-- <script src="./js/scripts.js"></script> -->
+  
+  <script>
+    (async function () {
+      const marquee = new Marquee(document.getElementById("marquee-display"))
+      marquee.getMarqueeElements();
+      const form = new SearchForm(document.getElementById("form"));
+      const result = new SearchResult(document.getElementById('list-result'));
+      form.onSearch((companies) => {
+        result.renderResults(companies)
+      })
+    })()
+
+  </script>
+</body>
+
+</html>
